@@ -1,0 +1,200 @@
+[gd_scene load_steps=20 format=3 uid="uid://c3d4s8lb808dc"]
+
+[ext_resource type="Script" uid="uid://c1fv8qoyg1757" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://de5lefuahutqd" path="res://15.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dqg2ircjhbyhs" path="res://assets/back4.png" id="2_4c57u"]
+[ext_resource type="StyleBox" uid="uid://ceav4vx5ms2u1" path="res://blue_style_box_flat.tres" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://c33v4eb08mxvk" path="res://assets/return.png" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bt345o7uap1jg" path="res://timer.tscn" id="3_7mycd"]
+[ext_resource type="Texture2D" uid="uid://dnawffon5pq03" path="res://assets/exit.png" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://vlssvyfp5e5j" path="res://assets/symbol_02.png" id="7_5vw27"]
+[ext_resource type="AudioStream" uid="uid://cdmru4bhdffan" path="res://assets/ovation.wav" id="8_kek77"]
+[ext_resource type="AudioStream" uid="uid://bkq36ko7qkq1d" path="res://assets/YuraSoop - Motivation Ambient.mp3" id="9_kek77"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2yge"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mycd"]
+
+[sub_resource type="Animation" id="Animation_efxa6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/GPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4c57u"]
+resource_name = "start"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/GPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dg77c"]
+_data = {
+&"RESET": SubResource("Animation_efxa6"),
+&"start": SubResource("Animation_4c57u")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ycdy4"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_w48qg"]
+offsets = PackedFloat32Array(0, 0.518182, 0.963636)
+colors = PackedColorArray(0.67451, 0.396078, 0, 1, 0.117647, 0.2, 0.517647, 1, 1, 0.227451, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vivmo"]
+gradient = SubResource("Gradient_w48qg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2cqfq"]
+particle_flag_disable_z = true
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 110.77
+orbit_velocity_min = -0.246
+orbit_velocity_max = 0.369
+gravity = Vector3(0, -300, 0)
+radial_accel_min = -30.77
+radial_accel_max = 33.85
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 21.54
+scale_min = 0.5
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_vivmo")
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1bvp3")
+
+[node name="back" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4c57u")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="15" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="timer" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_7mycd")]
+layout_mode = 2
+
+[node name="manage_panel" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="reset" type="Button" parent="MarginContainer/VBoxContainer/manage_panel"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h2yge")
+theme_override_styles/hover = ExtResource("2_h2yge")
+theme_override_styles/pressed = ExtResource("2_h2yge")
+theme_override_styles/normal = ExtResource("2_h2yge")
+icon = ExtResource("3_1bvp3")
+
+[node name="exit" type="Button" parent="MarginContainer/VBoxContainer/manage_panel"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7mycd")
+theme_override_styles/hover = ExtResource("2_h2yge")
+theme_override_styles/pressed = ExtResource("2_h2yge")
+theme_override_styles/normal = ExtResource("2_h2yge")
+icon = ExtResource("5_lquwl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer"]
+libraries = {
+&"": SubResource("AnimationLibrary_dg77c")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="MarginContainer/AnimationPlayer"]
+material = SubResource("CanvasItemMaterial_ycdy4")
+position = Vector2(575, 560)
+emitting = false
+amount = 20
+texture = ExtResource("7_5vw27")
+lifetime = 1.94
+one_shot = true
+speed_scale = 1.65
+explosiveness = 0.59
+randomness = 0.38
+process_material = SubResource("ParticleProcessMaterial_2cqfq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MarginContainer/AnimationPlayer"]
+stream = ExtResource("8_kek77")
+
+[node name="background_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_kek77")
+autoplay = true
+parameters/looping = true
+
+[connection signal="send_end" from="MarginContainer/VBoxContainer/15" to="." method="_on__send_end"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/manage_panel/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/manage_panel/exit" to="." method="_on_exit_pressed"]

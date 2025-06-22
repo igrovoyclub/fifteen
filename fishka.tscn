@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfxnn7oh6t7fu"]
+
+[ext_resource type="Script" uid="uid://citu1di4xavxy" path="res://fishka.gd" id="1_nitwl"]
+[ext_resource type="AudioStream" uid="uid://dj6g8c6nvumq5" path="res://assets/click.wav" id="2_8n2u4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umxi3"]
+bg_color = Color(0.652106, 0.95178, 0.682309, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.98185, 0.730384, 0.680811, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_nitwl"]
+font_size = 63
+outline_size = 6
+outline_color = Color(0.027451, 0.0235294, 0.0235294, 1)
+
+[node name="fishka" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_umxi3")
+text = "0"
+label_settings = SubResource("LabelSettings_nitwl")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_nitwl")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8n2u4")

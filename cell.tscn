@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch81g2no528fj"]
+
+[ext_resource type="Script" uid="uid://bw705snkav5jq" path="res://cell.gd" id="1_gwrgs"]
+[ext_resource type="PackedScene" uid="uid://dfxnn7oh6t7fu" path="res://fishka.tscn" id="1_yh0nt"]
+
+[node name="cell" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchor_right = 0.087
+anchor_bottom = 0.154
+offset_right = -100.224
+offset_bottom = -99.792
+script = ExtResource("1_gwrgs")
+metadata/_edit_use_anchors_ = true
+
+[node name="fishka" parent="." instance=ExtResource("1_yh0nt")]
+layout_mode = 1

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt345o7uap1jg"]
+
+[ext_resource type="Script" uid="uid://b0mhivsbfym5i" path="res://timer.gd" id="1_qdhxh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
+font_size = 29
+font_color = Color(0.844516, 0.610061, 0.521227, 1)
+outline_size = 5
+outline_color = Color(0.0235294, 0.0235294, 0.0509804, 1)
+
+[node name="timer" type="Label"]
+size_flags_horizontal = 4
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_lquwl")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_qdhxh")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
