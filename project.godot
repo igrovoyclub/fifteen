@@ -13,11 +13,16 @@ config_version=5
 config/name="15"
 run/main_scene="uid://c3d4s8lb808dc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="uid://bism6fc77ig7a"
 
 [autoload]
 
 Globals="*res://Globals.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 
 [rendering]
 

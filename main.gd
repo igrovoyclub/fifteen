@@ -3,6 +3,8 @@ extends Control
 class_name Main
 
 func _on_exit_pressed() -> void:
+	Globals.player_state.save_cell_values($MarginContainer/VBoxContainer/"15")
+	Globals.save_player_state()
 	get_tree().quit()
 	
 func _on__send_end() -> void:

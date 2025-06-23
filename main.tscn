@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c1fv8qoyg1757" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://de5lefuahutqd" path="res://15.tscn" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://dqg2ircjhbyhs" path="res://assets/back4.png" id="2_4c57u"]
+[ext_resource type="Texture2D" uid="uid://bnb2rwmmid7a3" path="res://assets/back4.png" id="2_4c57u"]
 [ext_resource type="StyleBox" uid="uid://ceav4vx5ms2u1" path="res://blue_style_box_flat.tres" id="2_h2yge"]
-[ext_resource type="Texture2D" uid="uid://c33v4eb08mxvk" path="res://assets/return.png" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://cps7ombdpvak2" path="res://assets/return.png" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bt345o7uap1jg" path="res://timer.tscn" id="3_7mycd"]
-[ext_resource type="Texture2D" uid="uid://dnawffon5pq03" path="res://assets/exit.png" id="5_lquwl"]
-[ext_resource type="Texture2D" uid="uid://vlssvyfp5e5j" path="res://assets/symbol_02.png" id="7_5vw27"]
-[ext_resource type="AudioStream" uid="uid://cdmru4bhdffan" path="res://assets/ovation.wav" id="8_kek77"]
-[ext_resource type="AudioStream" uid="uid://bkq36ko7qkq1d" path="res://assets/YuraSoop - Motivation Ambient.mp3" id="9_kek77"]
+[ext_resource type="Texture2D" uid="uid://5547yeruyl7m" path="res://assets/exit.png" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://chkvvukfhb8xs" path="res://assets/symbol_02.png" id="7_5vw27"]
+[ext_resource type="AudioStream" uid="uid://df16mdvoksai0" path="res://assets/ovation.wav" id="8_kek77"]
+[ext_resource type="AudioStream" uid="uid://ddyj3h4xwvce1" path="res://assets/YuraSoop - Motivation Ambient.mp3" id="9_kek77"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2yge"]
 
